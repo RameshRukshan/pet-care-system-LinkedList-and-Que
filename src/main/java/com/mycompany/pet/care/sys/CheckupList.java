@@ -65,6 +65,55 @@ public class CheckupList {
      return Checkup.checkup;
     }
     
+   
+    public int size() {
+        CNode temp = head;
+        int count = 0;
+        while (temp != null) {
+            count++;
+            temp = temp.pre;
+        }
+
+        return count;
+    }
+    
+    public void PrintData() {
+        CNode temp = head;
+        int count = 0;
+        while (temp != null) {
+            count++;
+            System.out.println(count + "    " + temp.checkup.toString());
+            temp = temp.pre;
+
+        }
+    }
+    
+    public Pet getPet(int index){
+        CNode temp=head;
+        int i=0;
+        while(temp!=null){
+            if(index==i){
+                break;
+            }
+            i++;
+            temp=temp.pre;
+        }
+        return temp.checkup.getPetObj();
+    }
+
+    public void addRecomondation(int index, String rec){
+        CNode temp=head;
+        int i=0;
+        while(temp!=null){
+            if(index==1){
+                temp.checkup.setReccommedation(rec);
+                break;
+            }
+            i++;
+            temp=temp.pre;
+        }
+    }
+   
     public void print()
     {
         CNode temp=head;

@@ -69,4 +69,26 @@ public class PetList {
         }
         return null;
     }
+    
+    public int size() {
+        PNode temp = head;
+        int count = 0;
+        while (temp != null) {
+            count++;
+            temp = temp.pre;
+        }
+
+        return count;
+    }
+    
+    public void PrintData() {
+        PNode temp = head;
+        int count = 0;
+        while (temp != null) {
+            count++;
+            System.out.println(count + "    " + temp.pet.toString());
+            temp = temp.pre;
+
+        }
+    }
 }

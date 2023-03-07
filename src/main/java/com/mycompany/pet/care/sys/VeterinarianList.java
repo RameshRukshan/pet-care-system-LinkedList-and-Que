@@ -81,4 +81,36 @@ public class VeterinarianList {
             temp = temp.pre;
         }
     }
+    
+    
+    public int size() {
+        VNode temp = head;
+        int count = 0;
+        while (temp != null) {
+            count++;
+            temp = temp.pre;
+        }
+
+        return count;
+    }
+    
+    public void PrintData() {
+        VNode temp = head;
+        int count = 0;
+        while (temp != null) {
+            count++;
+            System.out.println(count + "    " + temp.veterinarian.toString());
+            temp = temp.pre;
+
+        }
+    }
+    
+    public Veterinarian getIndex(int index){
+        VNode temp=head;
+        for(int i=0;i<index;i++){
+            temp=temp.pre;
+        }
+        return temp.veterinarian;
+    }
+    
 }
